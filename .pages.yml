@@ -1,0 +1,129 @@
+media:
+  input: ""
+  output: ""
+
+content:
+  # ==========================================
+  # 1. SEO, TRACKING & ADVERTISING CODES
+  # ==========================================
+  - id: integrations
+    label: "SEO, AdSense & Tracking Setup"
+    type: file
+    path: index.html
+    fields:
+      - id: meta_title
+        label: "Google SEO Title Tag"
+        type: string
+        search: "<title>Rightway Academy | Entry Test Preparation & Free Books</title>"
+        replace: "<title>{{value}}</title>"
+      - id: meta_desc
+        label: "Google SEO Meta Description"
+        type: string
+        search: '<meta name="description" content="Rightway Academy provides free digital entry test preparation resources for AMC, AFNS, MDCAT, ECAT and Punjab board textbooks.">'
+        replace: '<meta name="description" content="{{value}}">'
+      - id: adsense_id
+        label: "Google AdSense Publisher ID (e.g., ca-pub-123456789)"
+        type: string
+        search: "ca-pub-XXXXXXXXXXXXXXXX"
+        replace: "{{value}}"
+      - id: analytics_id
+        label: "Google Analytics 4 Measurement ID (e.g., G-XXXXXX)"
+        type: string
+        search: "G-XXXXXXXXXX"
+        replace: "{{value}}"
+      - id: sheet_endpoint
+        label: "Google Sheets Web App URL (Enrollment Form Endpoint)"
+        type: string
+        search: "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec"
+        replace: "{{value}}"
+
+  # ==========================================
+  # 2. HOMEPAGE TEXT, HEROES & BACKLINKS
+  # ==========================================
+  - id: homepage
+    label: "Manage Main Website Text & Backlinks"
+    type: file
+    path: index.html
+    fields:
+      - id: main_heading
+        label: "AMC Section Main Title"
+        type: string
+        search: "<h1>🩺 AMC Preparation Guide</h1>"
+        replace: "<h1>🩺 {{value}}</h1>"
+      - id: amc_sub
+        label: "AMC Eligibility Paragraph Text"
+        type: string
+        search: "<p>Join Army Medical College Rawalpindi as a Medical Cadet (MBBS/BDS) — Eligibility & Selection Process</p>"
+        replace: "<p>{{value}}</p>"
+      - id: join_army_link
+        label: "Official Army Portal Backlink URL"
+        type: string
+        search: 'href="https://joinpakarmy.gov.pk"'
+        replace: 'href="{{value}}"'
+
+  # ==========================================
+  # 3. TEXTBOOKS & PAST PAPERS DOWNLOAD PORTAL
+  # ==========================================
+  - id: downloads
+    label: "Textbook & Past Paper Download Links"
+    type: file
+    path: index.html
+    fields:
+      - id: bio_9_ptb
+        label: "Class 9 Biology - PTB Link"
+        type: string
+        search: 'href="#" class="book-link link-ptb"'
+        replace: 'href="{{value}}" class="book-link link-ptb"'
+      - id: bio_9_tc
+        label: "Class 9 Biology - Taleem City Link"
+        type: string
+        search: 'href="#" class="book-link link-tc"'
+        replace: 'href="{{value}}" class="book-link link-tc"'
+      - id: chem_10_ptb
+        label: "Class 10 Chemistry - PTB Link"
+        type: string
+        search: 'href="#" class="book-link link-ptb"'
+        replace: 'href="{{value}}" class="book-link link-ptb"'
+      - id: math_11_ptb
+        label: "Class 11 Mathematics - PTB Link"
+        type: string
+        search: 'href="#" class="book-link link-ptb"'
+        replace: 'href="{{value}}" class="book-link link-ptb"'
+      - id: phys_12_ptb
+        label: "Class 12 Physics - PTB Link"
+        type: string
+        search: 'href="#" class="book-link link-ptb"'
+        replace: 'href="{{value}}" class="book-link link-ptb"'
+
+  # ==========================================
+  # 4. LIVE PRACTICE MCQ QUIZ BANK
+  # ==========================================
+  - id: quiz_bank
+    label: "Edit Online MCQ Test Bank Questions"
+    type: file
+    path: index.html
+    fields:
+      - id: q1_text
+        label: "Question 1 Text"
+        type: string
+        search: "Which branch of biology deals with the study of social behavior of animals?"
+        replace: "{{value}}"
+      - id: q1_opt_a
+        label: "Option A Text"
+        type: string
+        search: "<span class=\"opt-lbl\">A</span> Sociobiology"
+        replace: "<span class=\"opt-lbl\">A</span> {{value}}"
+
+  # ==========================================
+  # 5. BLOG WRITING & LATEST NEWS
+  # ==========================================
+  - id: blog_feed
+    label: "Blog Writing & Academy Announcements"
+    type: file
+    path: index.html
+    fields:
+      - id: blog_heading
+        label: "Main Blog Section Subtitle"
+        type: string
+        search: "<p>Articles on algorithm modifications, examination planning strategies, and curriculum revisions.</p>"
+        replace: "<p>{{value}}</p>"
